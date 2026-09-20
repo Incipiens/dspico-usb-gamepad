@@ -1,0 +1,6 @@
+[submodule "libs/tinyusb"]
+	path = libs/tinyusb
+	url = https://github.com/hathach/tinyusb.git
+[submodule "libs/libtwl"]
+	path = libs/libtwl
+	url = https://github.com/Gericom/libtwl
