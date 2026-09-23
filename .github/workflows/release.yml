@@ -19,7 +19,7 @@ jobs:
         with:
           submodules: recursive
       - name: Build
-        run: make
+        run: make TARGET=usb-gamepad
       - name: Release
         uses: softprops/action-gh-release@v3
         with:
