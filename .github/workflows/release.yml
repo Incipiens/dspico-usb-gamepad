@@ -19,7 +19,7 @@ jobs:
         with:
           submodules: recursive
       - name: Build
-        run: make TARGET=usb-gamepad
+        run: make && mv "$(basename "$PWD").nds" usb-gamepad.nds
       - name: Release
         uses: softprops/action-gh-release@v3
         with:
