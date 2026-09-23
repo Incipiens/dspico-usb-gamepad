@@ -1,0 +1,26 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    name: Build and release with devkitARM
+    runs-on: ubuntu-latest
+    container: devkitpro/devkitarm:20241104
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v7
+        with:
+          submodules: recursive
+      - name: Build
+        run: make
+      - name: Release
+        uses: softprops/action-gh-release@v3
+        with:
+          files: usb-gamepad.nds
